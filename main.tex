@@ -1,0 +1,178 @@
+%%%%%%%%%
+% Cameron Shand i3 Cheat Sheet
+%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{amsmath,amssymb}
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage{menukeys}
+\usepackage{fontawesome}
+
+\title{i3 Keybindings Cheat Sheet}
+
+
+\advance\topmargin -.8in
+\advance\textheight 3in
+\advance\textwidth 3in
+\advance\oddsidemargin -1.5in
+\advance\evensidemargin -1.5in
+\parindent 0pt
+\parskip 2pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+%\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
+\begin{document}
+
+\begin{center}{\huge{\textbf{i3 Keybindings Cheat Sheet}}}\\
+{\large Cameron Shand}
+\end{center}
+\begin{multicols*}{3}
+
+\definecolor{shandbrand}{HTML}{0687C8}
+
+\tikzstyle{mybox} = [draw=black, fill=white, thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{fancytitle} = [fill=shandbrand, text=white, font=\bfseries\large, rounded corners]
+
+% Controls the distance between rows globally (default = 1)
+\renewcommand{\arraystretch}{1.5}
+
+% Define the modkey being used (defaults to the Windows/super key)
+\newcommand{\modkey}{\Large \faWindows~\large}
+\newcommand{\titlegap}{\vspace*{0.2cm}}
+\newcommand{\sectiongap}{\vspace*{1.5cm}}
+
+%-------------------------------------%
+% Moving Around
+%---------- Content ----------%
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \titlegap
+	\begin{center}\small{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{3.5cm}%
+       >{\raggedleft\arraybackslash}p{4cm}%
+    }
+		\modkey + j/$\leftarrow$ & Move focus (left)\\
+		\modkey + k/$\uparrow$ & Move focus (up)\\
+		\modkey + l/$\downarrow$ & Move focus (down)\\
+		\modkey + ;/$\rightarrow$ & Move focus (right)\\[0.5cm]
+
+		\modkey + \shift~+ j/$\leftarrow$ & Move window (left)\\
+		\modkey + \shift~+ k/$\uparrow$ & Move window (up)\\
+		\modkey + \shift~+ l/$\downarrow$ & Move window (down)\\
+		\modkey + \shift~+ ;/$\rightarrow$ & Move window (right)\\[0.5cm]
+		
+		\modkey + \shift~+ \# & Move window to workspace \#
+	\end{tabular}}
+	\end{center}
+    \end{minipage}
+};
+%---------- Title ----------%
+\node[fancytitle, right=10pt] at (box.north west) {Moving Around};
+\end{tikzpicture}
+%-------------------------------------%
+
+%-------------------------------------%
+% Opening Things
+%---------- Content ----------%
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \titlegap
+	\begin{center}\small{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{3.5cm}%
+       >{\raggedleft\arraybackslash}p{4cm}%
+    }
+		\modkey + Enter & Open a New Terminal\\
+		\modkey + D & Open program launcher\\
+	\end{tabular}}
+	\end{center}
+    \end{minipage}
+};
+%---------- Title ----------%
+\node[fancytitle, right=10pt] at (box.north west) {Opening Things};
+\end{tikzpicture}
+%-------------------------------------%
+
+%-------------------------------------%
+% Opening Things
+%---------- Content ----------%
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \titlegap
+	\begin{center}\small{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{3.5cm}%
+       >{\raggedleft\arraybackslash}p{4cm}%
+    }
+		\modkey + \shift~+ q & Kill current window\\
+		\modkey + D & Kill current workspace\\
+	\end{tabular}}
+	\end{center}
+    \end{minipage}
+};
+%---------- Title ----------%
+\node[fancytitle, right=10pt] at (box.north west) {Closing Things};
+\end{tikzpicture}
+%-------------------------------------%
+
+%-------------------------------------%
+% Opening Things
+%---------- Content ----------%
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \titlegap
+	\begin{center}\small{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{3.5cm}%
+       >{\raggedleft\arraybackslash}p{4cm}%
+    }
+		\modkey + \shift~+ r & Restart i3\\
+		\modkey + \ctrl~+ l & Lock i3\\
+	\end{tabular}}
+	\end{center}
+    \end{minipage}
+};
+%---------- Title ----------%
+\node[fancytitle, right=10pt] at (box.north west) {Locking, Exiting, Restarting};
+\end{tikzpicture}
+%-------------------------------------%
+
+%-------------------------------------%
+% Opening Things
+%---------- Content ----------%
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \titlegap
+	\begin{center}\small{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{3.5cm}%
+       >{\raggedleft\arraybackslash}p{3.5cm}%
+    }
+		\modkey + t & No border\\
+		\modkey + y & Border (1 pixel)\\
+		\modkey + u & Normal border\\
+	\end{tabular}}
+	\end{center}
+    \end{minipage}
+};
+%---------- Title ----------%
+\node[fancytitle, right=10pt] at (box.north west) {Changing the border};
+\end{tikzpicture}
+%-------------------------------------%
+
+\end{multicols*}
+\end{document}
