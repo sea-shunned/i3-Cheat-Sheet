@@ -24,7 +24,7 @@
 \title{i3 Keybindings Cheat Sheet}
 
 
-\advance\topmargin -.8in
+\advance\topmargin -.9in
 \advance\textheight 3in
 \advance\textwidth 3in
 \advance\oddsidemargin -1.5in
@@ -38,43 +38,51 @@
 \begin{center}{\huge{\textbf{i3 Keybindings Cheat Sheet}}}\\
 {\large Cameron Shand}
 \end{center}
-\begin{multicols*}{3}
+\begin{multicols*}{2}
 
-\definecolor{shandbrand}{HTML}{0687C8}
+\definecolor{sectioncolour}{HTML}{0687C8}
 
 \tikzstyle{mybox} = [draw=black, fill=white, thick,
     rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
-\tikzstyle{fancytitle} = [fill=shandbrand, text=white, font=\bfseries\large, rounded corners]
+\tikzstyle{fancytitle} = [fill=sectioncolour, text=white, font=\bfseries\Large, rounded corners]
 
 % Controls the distance between rows globally (default = 1)
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.6}
 
 % Define the modkey being used (defaults to the Windows/super key)
 \newcommand{\modkey}{\Large \faWindows~\large}
+
 \newcommand{\titlegap}{\vspace*{0.2cm}}
 \newcommand{\sectiongap}{\vspace*{1.5cm}}
+\newcommand\sectwidth{0.45\textwidth}
+\newcommand\ragr{5cm}
+\newcommand\ragl{6cm}
 
 %-------------------------------------%
 % Moving Around
 %---------- Content ----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+    \begin{minipage}{\sectwidth}
     \titlegap
-	\begin{center}\small{\begin{tabular}%
-      {>{\raggedright\arraybackslash}p{3.5cm}%
-       >{\raggedleft\arraybackslash}p{4cm}%
+	\begin{center}\normalsize{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{\ragr}%
+       >{\raggedleft\arraybackslash}p{\ragl}%
     }
 		\modkey + j/$\leftarrow$ & Move focus (left)\\
 		\modkey + k/$\uparrow$ & Move focus (up)\\
 		\modkey + l/$\downarrow$ & Move focus (down)\\
-		\modkey + ;/$\rightarrow$ & Move focus (right)\\[0.5cm]
+		\modkey + ;/$\rightarrow$ & Move focus (right)\\
+		\modkey + a & Focus parent\\
+		\modkey + d & Focus child\\
+		\modkey + ␣ & Toggle focus\\[0.5cm]
 
 		\modkey + \shift~+ j/$\leftarrow$ & Move window (left)\\
 		\modkey + \shift~+ k/$\uparrow$ & Move window (up)\\
 		\modkey + \shift~+ l/$\downarrow$ & Move window (down)\\
 		\modkey + \shift~+ ;/$\rightarrow$ & Move window (right)\\[0.5cm]
 		
+		\modkey + \# & Move to window \#\\
 		\modkey + \shift~+ \# & Move window to workspace \#
 	\end{tabular}}
 	\end{center}
@@ -90,14 +98,14 @@
 %---------- Content ----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+    \begin{minipage}{\sectwidth}
     \titlegap
-	\begin{center}\small{\begin{tabular}%
-      {>{\raggedright\arraybackslash}p{3.5cm}%
-       >{\raggedleft\arraybackslash}p{4cm}%
+	\begin{center}\normalsize{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{\ragr}%
+       >{\raggedleft\arraybackslash}p{\ragl}%
     }
-		\modkey + Enter & Open a New Terminal\\
-		\modkey + D & Open program launcher\\
+		\modkey + \return & Open a new terminal\\
+		\modkey + d & Open program launcher\\
 	\end{tabular}}
 	\end{center}
     \end{minipage}
@@ -112,14 +120,14 @@
 %---------- Content ----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+    \begin{minipage}{\sectwidth}
     \titlegap
-	\begin{center}\small{\begin{tabular}%
-      {>{\raggedright\arraybackslash}p{3.5cm}%
-       >{\raggedleft\arraybackslash}p{4cm}%
+	\begin{center}\normalsize{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{\ragr}%
+       >{\raggedleft\arraybackslash}p{\ragl}%
     }
 		\modkey + \shift~+ q & Kill current window\\
-		\modkey + D & Kill current workspace\\
+		\modkey + a, \modkey + q & Kill current workspace\\
 	\end{tabular}}
 	\end{center}
     \end{minipage}
@@ -134,14 +142,15 @@
 %---------- Content ----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+    \begin{minipage}{\sectwidth}
     \titlegap
-	\begin{center}\small{\begin{tabular}%
-      {>{\raggedright\arraybackslash}p{3.5cm}%
-       >{\raggedleft\arraybackslash}p{4cm}%
+	\begin{center}\normalsize{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{\ragr}%
+       >{\raggedleft\arraybackslash}p{\ragl}%
     }
 		\modkey + \shift~+ r & Restart i3\\
 		\modkey + \ctrl~+ l & Lock i3\\
+		\modkey + \shift~+ e & Exit i3\\
 	\end{tabular}}
 	\end{center}
     \end{minipage}
@@ -156,11 +165,11 @@
 %---------- Content ----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+    \begin{minipage}{\sectwidth}
     \titlegap
-	\begin{center}\small{\begin{tabular}%
-      {>{\raggedright\arraybackslash}p{3.5cm}%
-       >{\raggedleft\arraybackslash}p{3.5cm}%
+	\begin{center}\normalsize{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{\ragr}%
+       >{\raggedleft\arraybackslash}p{\ragl}%
     }
 		\modkey + t & No border\\
 		\modkey + y & Border (1 pixel)\\
@@ -171,6 +180,36 @@
 };
 %---------- Title ----------%
 \node[fancytitle, right=10pt] at (box.north west) {Changing the border};
+\end{tikzpicture}
+%-------------------------------------%
+
+%-------------------------------------%
+% Opening Things
+%---------- Content ----------%
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{\sectwidth}
+    \titlegap
+	\begin{center}\normalsize{\begin{tabular}%
+      {>{\raggedright\arraybackslash}p{\ragr}%
+       >{\raggedleft\arraybackslash}p{\ragl}%
+    }
+		\modkey + h & Split horizontally\\
+		\modkey + v & Split vertically\\
+		\modkey + f & Fullscreen (focused)\\[0.5cm]
+		
+		\modkey + s & Stacking layout\\
+		\modkey + w & Tabbed layout\\
+		\modkey + e & Toggle (horz/vert) split\\[0.5cm]
+		
+		\modkey + \shift~+ ␣ & Toggle floating\\
+		\modkey + \faMousePointer & Move floating window\\
+	\end{tabular}}
+	\end{center}
+    \end{minipage}
+};
+%---------- Title ----------%
+\node[fancytitle, right=10pt] at (box.north west) {Window manipulation};
 \end{tikzpicture}
 %-------------------------------------%
 
