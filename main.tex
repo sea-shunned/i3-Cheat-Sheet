@@ -4,7 +4,6 @@
 
 \documentclass[12pt]{article}
 \usepackage[landscape]{geometry}
-\usepackage{url}
 \usepackage{multicol}
 \usepackage{amsfonts}
 \usepackage{tikz}
@@ -12,10 +11,8 @@
 \usepackage{amsmath,amssymb}
 
 \usepackage{colortbl}
-\usepackage{xcolor}
-\usepackage{mathtools}
+%\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
-\usepackage{enumitem}
 
 \usepackage[utf8]{inputenc}
 \usepackage{menukeys}
@@ -23,7 +20,7 @@
 
 \title{i3 Keybindings Cheat Sheet}
 
-
+% Spacing commands
 \advance\topmargin -.9in
 \advance\textheight 3in
 \advance\textwidth 3in
@@ -32,16 +29,22 @@
 \parindent 0pt
 \parskip 2pt
 \newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
-%\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
-\begin{document}
 
-\begin{center}{\huge{\textbf{i3 Keybindings Cheat Sheet}}}\\
-{\large Cameron Shand}
-\end{center}
-\begin{multicols*}{2}
+
+\begin{document}
 
 \definecolor{sectioncolour}{HTML}{0687C8}
 
+% Set up title
+\begin{center}{\huge{\textbf{i3 Keybindings Cheat Sheet}}}\\
+{\large Cameron Shand}
+\end{center}
+
+% Begin the columns
+% If extending, should switch to 3 and change the spacing vars
+\begin{multicols*}{2}
+
+% Setup tikz styles
 \tikzstyle{mybox} = [draw=black, fill=white, thick,
     rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
 \tikzstyle{fancytitle} = [fill=sectioncolour, text=white, font=\bfseries\Large, rounded corners]
@@ -52,15 +55,14 @@
 % Define the modkey being used (defaults to the Windows/super key)
 \newcommand{\modkey}{\Large \faWindows~\large}
 
+% Useful variables for global spacing
 \newcommand{\titlegap}{\vspace*{0.2cm}}
 \newcommand{\sectiongap}{\vspace*{1.5cm}}
 \newcommand\sectwidth{0.45\textwidth}
 \newcommand\ragr{5cm}
 \newcommand\ragl{6cm}
 
-%-------------------------------------%
-% Moving Around
-%---------- Content ----------%
+%----------Moving Around----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{\sectwidth}
@@ -93,9 +95,7 @@
 \end{tikzpicture}
 %-------------------------------------%
 
-%-------------------------------------%
-% Opening Things
-%---------- Content ----------%
+%----------Opening Things----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{\sectwidth}
@@ -115,9 +115,7 @@
 \end{tikzpicture}
 %-------------------------------------%
 
-%-------------------------------------%
-% Opening Things
-%---------- Content ----------%
+%----------Closing Things----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{\sectwidth}
@@ -137,9 +135,7 @@
 \end{tikzpicture}
 %-------------------------------------%
 
-%-------------------------------------%
-% Opening Things
-%---------- Content ----------%
+%----------Locking, Exiting, Restarting----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{\sectwidth}
@@ -160,9 +156,7 @@
 \end{tikzpicture}
 %-------------------------------------%
 
-%-------------------------------------%
-% Opening Things
-%---------- Content ----------%
+%----------Changing border----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{\sectwidth}
@@ -183,9 +177,7 @@
 \end{tikzpicture}
 %-------------------------------------%
 
-%-------------------------------------%
-% Opening Things
-%---------- Content ----------%
+%----------Window manipulation----------%
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{\sectwidth}
